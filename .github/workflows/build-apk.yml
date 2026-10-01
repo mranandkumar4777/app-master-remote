@@ -18,9 +18,9 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Build APK with Gradle inside app folder
+    - name: Build APK with Gradle in phone-app-android
       run: |
-        cd app
+        cd phone-app-android
         chmod +x gradlew
         ./gradlew assembleDebug
 
@@ -28,4 +28,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: PresenterRemote-APK
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: phone-app-android/app/build/outputs/apk/debug/app-debug.apk
